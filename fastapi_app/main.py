@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Depends
-from database import database
+from database import database, create_tables
 import crud
 import schemas
 
@@ -8,6 +8,7 @@ app = FastAPI()
 @app.on_event("startup")
 async def startup():
     await database.connect()
+    create_tables()  
 
 @app.on_event("shutdown")
 async def shutdown():
@@ -18,6 +19,6 @@ async def create_user(user: schemas.UserCreate):
     user_id = await crud.create_user(user)
     return {"id": user_id, **user.dict()}
 
-@app.get("/users/", response_model=list[schemas.User])
+@app.get("/users/", response_modlsel=list[schemas.User])
 async def read_users():
     return await crud.get_users()
