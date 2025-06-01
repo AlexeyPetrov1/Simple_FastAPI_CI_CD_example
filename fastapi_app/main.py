@@ -19,6 +19,6 @@ async def create_user(user: schemas.UserCreate):
     user_id = await crud.create_user(user)
     return {"id": user_id, **user.dict()}
 
-@app.get("/users/", response_modlsel=list[schemas.User])
+@app.get("/users/", response_model=list[schemas.User])
 async def read_users():
     return await crud.get_users()
