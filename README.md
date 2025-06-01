@@ -1,0 +1,1 @@
+# This project for testing FastAPI and Github Actions functionality 
