@@ -29,4 +29,5 @@ jobs:
 
       - name: Tests
         run: |
-          pytest
+          cd fastapi_app
+          pytest test_main.py
