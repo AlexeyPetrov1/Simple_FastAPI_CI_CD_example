@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Depends
-from database import database, create_tables
-import crud
-import schemas
+from .database import database, create_tables
+from fastapi_app import crud
+from fastapi_app import schemas
 
 app = FastAPI()
 

@@ -1,6 +1,6 @@
-from database import database
-from models import users
-from schemas import UserCreate
+from fastapi_app.database import database
+from fastapi_app.models import users
+from fastapi_app.schemas import UserCreate
 
 async def create_user(user: UserCreate):
     query = users.insert().values(name=user.name, email=user.email)

@@ -1,5 +1,5 @@
 from sqlalchemy import Table, Column, Integer, String
-from database import metadata
+from fastapi_app.database import metadata
 
 users = Table(
     "users", metadata,
